@@ -1,0 +1,80 @@
+version: '3.8'
+services:
+  word-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-data:/var/opt/mssql
+
+  document-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-document:/var/opt/mssql
+
+  occurrence-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-occurrence:/var/opt/mssql
+
+  short-word-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-data-short:/var/opt/mssql
+
+  medium-word-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-data-medium:/var/opt/mssql
+
+  long-word-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD=${SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-data-long:/var/opt/mssql
+
+  indexer-service:
+    build:
+      context: ./Indexer
+      dockerfile: Dockerfile
+    depends_on:
+      - word-db
+
+  console-service:
+    build:
+      context: ./Console
+      dockerfile: Dockerfile
+    depends_on:
+      - word-db
+
+  word-service:
+    build:
+      context: ./WordService
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 2
+    depends_on:
+      - word-db
+
+volumes:
+  mssql-data:
+  mssql-document:
+  mssql-occurrence:
+  mssql-data-short:
+  mssql-data-medium:
+  mssql-data-long:
