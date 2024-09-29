@@ -3,7 +3,7 @@ services:
   word-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
-      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-data:/var/opt/mssql
@@ -11,7 +11,7 @@ services:
   document-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
-      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-document:/var/opt/mssql
@@ -19,7 +19,7 @@ services:
   occurrence-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
-      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-occurrence:/var/opt/mssql
@@ -27,7 +27,7 @@ services:
   short-word-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
-      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-data-short:/var/opt/mssql
@@ -35,7 +35,7 @@ services:
   medium-word-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
-      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-data-medium:/var/opt/mssql
@@ -43,7 +43,7 @@ services:
   long-word-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
-      MSSQL_SA_PASSWORD=${SA_PASSWORD}
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-data-long:/var/opt/mssql
