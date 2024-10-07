@@ -70,8 +70,23 @@
             <mxPoint x="360" y="730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G1x29QLc5-iGXMgj-8TD-21" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="280" y="720" width="120" height="60" as="geometry" />
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-21" value="Coordinator" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="680" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.588;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="G1x29QLc5-iGXMgj-8TD-6" target="G1x29QLc5-iGXMgj-8TD-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="780" as="sourcePoint" />
+            <mxPoint x="360" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-23" value="Database" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="690" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="G1x29QLc5-iGXMgj-8TD-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="620" as="sourcePoint" />
+            <mxPoint x="360" y="730" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
