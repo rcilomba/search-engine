@@ -53,21 +53,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-16" value="DatabaseController" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="790" width="130" height="50" as="geometry" />
+          <mxGeometry x="30" y="830" width="130" height="50" as="geometry" />
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-17" value="DocumentController" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="840" width="130" height="40" as="geometry" />
+          <mxGeometry x="30" y="880" width="130" height="40" as="geometry" />
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-18" value="OccurrenceController" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="890" width="130" height="40" as="geometry" />
+          <mxGeometry x="30" y="930" width="130" height="40" as="geometry" />
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-19" value="WordController" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="940" width="130" height="40" as="geometry" />
+          <mxGeometry x="30" y="980" width="130" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="G1x29QLc5-iGXMgj-8TD-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="G1x29QLc5-iGXMgj-8TD-11" target="G1x29QLc5-iGXMgj-8TD-16">
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="G1x29QLc5-iGXMgj-8TD-11">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="310" y="780" as="sourcePoint" />
-            <mxPoint x="360" y="730" as="targetPoint" />
+            <mxPoint x="100" y="800" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-21" value="Coordinator" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -87,6 +87,9 @@
             <mxPoint x="380" y="620" as="sourcePoint" />
             <mxPoint x="360" y="730" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-27" value="API Calls" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="800" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
