@@ -94,6 +94,12 @@
         <mxCell id="G1x29QLc5-iGXMgj-8TD-31" value="Read/Write Operations" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="205" y="370" width="100" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-32" value="Logs" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-33" value="HTTP requests" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
