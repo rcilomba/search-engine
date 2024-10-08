@@ -19,14 +19,14 @@
             <mxPoint x="370" y="1140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G1x29QLc5-iGXMgj-8TD-38" value="HTTP" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-38" value="HTTP request&lt;div&gt;sync&lt;/div&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="210" y="430" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-39" value="Database" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="120" y="590" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-40" value="Logs" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="590" width="120" height="40" as="geometry" />
+          <mxGeometry x="220" y="545" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-41" value="Zipkin" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="440" y="590" width="110" height="40" as="geometry" />
@@ -34,10 +34,10 @@
         <mxCell id="G1x29QLc5-iGXMgj-8TD-42" value="API Controllers" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="450" y="720" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="G1x29QLc5-iGXMgj-8TD-43" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.677;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="G1x29QLc5-iGXMgj-8TD-36" target="G1x29QLc5-iGXMgj-8TD-39">
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-43" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="G1x29QLc5-iGXMgj-8TD-36">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="320" y="1190" as="sourcePoint" />
-            <mxPoint x="370" y="1140" as="targetPoint" />
+            <mxPoint x="150" y="580" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-44" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="G1x29QLc5-iGXMgj-8TD-40">
@@ -138,6 +138,15 @@
         </mxCell>
         <mxCell id="G1x29QLc5-iGXMgj-8TD-70" value="WordService" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="450" y="380" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-71" value="HTTP request&lt;div&gt;async&lt;/div&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="680" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G1x29QLc5-iGXMgj-8TD-72" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.833;entryY=-0.01;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.363;exitY=1.044;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="G1x29QLc5-iGXMgj-8TD-36" target="G1x29QLc5-iGXMgj-8TD-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="1130" as="sourcePoint" />
+            <mxPoint x="370" y="1080" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
