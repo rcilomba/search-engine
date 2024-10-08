@@ -1,19 +1,21 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
+# Base image
 FROM mcr.microsoft.com/dotnet/runtime:6.0 AS base
 WORKDIR /app
 
+# Build image
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["ConsoleSearch/ConsoleSearch.csproj", "ConsoleSearch/"]
+COPY ConsoleSearch.csproj ./ConsoleSearch/
 RUN dotnet restore "ConsoleSearch/ConsoleSearch.csproj"
 COPY . .
 WORKDIR "/src/ConsoleSearch"
 RUN dotnet build "ConsoleSearch.csproj" -c Release -o /app/build
 
+# Publish image
 FROM build AS publish
-RUN dotnet publish "ConsoleSearch.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "ConsoleSearch.csproj" -c Release -o /app/publish
 
+# Final image
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .

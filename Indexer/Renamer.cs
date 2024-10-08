@@ -1,28 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace Indexer
 {
     public class Renamer
     {
-        void RenameFile(FileInfo f)
+        private void RenameFile(FileInfo file)
         {
-            if  (f.FullName.EndsWith(".txt")) return;
-            if (f.Name.StartsWith('.')) return;
-            var ending = f.FullName.EndsWith(".") ? "txt" : ".txt";
-            File.Move(f.FullName, f.FullName + ending, true);
+            if (file.FullName.EndsWith(".txt")) return; // Skip .txt files
+            if (file.Name.StartsWith('.')) return; // Skip hidden files
+
+            // Prepare new file name with .txt extension
+            string newFileName = file.FullName + (file.FullName.EndsWith(".") ? "txt" : ".txt");
+
+            try
+            {
+                File.Move(file.FullName, newFileName, true);
+                Console.WriteLine($"Renamed: {file.FullName} to {newFileName}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error renaming file {file.FullName}: {ex.Message}");
+            }
         }
 
         public void Crawl(DirectoryInfo dir)
         {
-            Console.WriteLine("Crawling " + dir.FullName);
-            
-            foreach (var file in dir.EnumerateFiles())
-                RenameFile(file);
+            if (!dir.Exists)
+            {
+                Console.WriteLine($"Directory does not exist: {dir.FullName}");
+                return;
+            }
 
-            foreach (var d in dir.EnumerateDirectories())
-                Crawl(d);
+            Console.WriteLine("Crawling " + dir.FullName);
+
+            foreach (var file in dir.EnumerateFiles())
+            {
+                RenameFile(file);
+            }
+
+            foreach (var directory in dir.EnumerateDirectories())
+            {
+                Crawl(directory);
+            }
         }
     }
 }

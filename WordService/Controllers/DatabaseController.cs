@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using Microsoft.Data.SqlClient;
+using System.Threading.Tasks;
 using WordService;
 
 [ApiController]
@@ -10,14 +9,16 @@ public class DatabaseController : ControllerBase
     private Database database = Database.GetInstance();
 
     [HttpDelete]
-    public void Delete()
+    public async Task<IActionResult> Delete()
     {
-        database.DeleteDatabase();
+        await Task.Run(() => database.DeleteDatabase());
+        return NoContent(); // Returnera en 204 No Content response
     }
 
     [HttpPost]
-    public void Post()
+    public async Task<IActionResult> Post()
     {
-        database.RecreateDatabase();
+        await Task.Run(() => database.RecreateDatabase());
+        return CreatedAtAction(nameof(Post), null); // Returnera en 201 Created response
     }
 }

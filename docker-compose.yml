@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   word-db:
     image: mcr.microsoft.com/azure-sql-edge:latest
@@ -50,14 +49,14 @@ services:
 
   indexer-service:
     build:
-      context: ./Indexer
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Indexer/Dockerfile
     depends_on:
       - word-db
 
   console-service:
     build:
-      context: ./Console
+      context: ./ConsoleSearch
       dockerfile: Dockerfile
     depends_on:
       - word-db
@@ -70,6 +69,22 @@ services:
       replicas: 2
     depends_on:
       - word-db
+      - seq
+      - zipkin
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Seq__ServerUrl=http://seq:5341
+      - Zipkin__Endpoint=http://zipkin:9411/api/v2/spans
+
+  seq:
+    image: datalust/seq:latest
+    ports:
+      - "5341:80"
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
 
 volumes:
   mssql-data:

@@ -20,17 +20,17 @@ namespace ConsoleSearch
         {
             api = new HttpClient { BaseAddress = new Uri("http://word-service") };
 
-            // Definiera retry policy
+            // Define retry policy
             retryPolicy = Policy
                 .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
-                .RetryAsync(3); // Försök 3 gånger
+                .RetryAsync(3); // Retry 3 times
 
-            // Definiera circuit breaker policy
+            // Define circuit breaker policy
             circuitBreakerPolicy = Policy
                 .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
-                .CircuitBreakerAsync(2, TimeSpan.FromMinutes(1)); // Bryter efter 2 misslyckanden
+                .CircuitBreakerAsync(2, TimeSpan.FromMinutes(1)); // Break after 2 failures
 
-            mWords = GetAllWordsAsync().Result; // Hämta alla ord via API-anrop
+            mWords = GetAllWordsAsync().Result; // Fetch all words via API call
         }
 
         public async Task<int> GetIdOfAsync(string word)

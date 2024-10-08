@@ -1,8 +1,13 @@
 # Ignore environment files
 .env
-Indexer/enron/
-bin/*
-obj/*
-*/bin/*
-*/obj/*
-docker-compose.yml
+
+# Ignore unnecessary build artifacts
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Exclude enron folder if it's not necessary
+# Indexer/enron/
+
+# Do not ignore docker-compose.yml for Docker build
